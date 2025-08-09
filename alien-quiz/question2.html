@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 2</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="progress">Question 2 of 10</div>
+    <h1>Choose your skin texture:</h1>
+    <form onsubmit="saveAnswer(event, 'q2', 'question3.html')">
+      <div><input type="radio" name="answer" value="Slimy" required> Slimy</div>
+<div><input type="radio" name="answer" value="Crystalline" required> Crystalline</div>
+<div><input type="radio" name="answer" value="Scaly" required> Scaly</div>
+<div><input type="radio" name="answer" value="Metallic" required> Metallic</div>
+      <button type="submit">Next</button>
+    </form>
+  </div>
+</body>
+</html>
