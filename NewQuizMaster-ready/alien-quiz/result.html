@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Alien Name</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your Alien Name Is:</h1>
+    <p id="result" style="font-size: 1.5rem; font-weight: bold;"></p>
+    <a href="question1.html"><button>Retake Quiz</button></a>
+  </div>
+
+  <script>
+    const parts = [];
+    for (let i = 1; i <= 10; i++) {
+      const val = sessionStorage.getItem('q' + i);
+      if (val) parts.push(val);
+    }
+
+    function createAlienName(answers) {
+      const prefix = answers[0]?.split(" ")[0] || "Zar";
+      const middle = answers[1]?.toLowerCase() || "goo";
+      const suffix = answers[9]?.replace(/[^A-Za-z]/g, "").slice(0, 5) || "blip";
+      return prefix + "-" + middle + "-" + suffix + "-" + Math.floor(Math.random() * 999);
+    }
+
+    document.getElementById('result').innerText = createAlienName(parts);
+  </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 1</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="progress">Question 1 of 10</div>
+    <h1>Pick a planet to live on:</h1>
+    <form onsubmit="saveAnswer(event, 'q1', 'question2.html')">
+      <div><input type="radio" name="answer" value="Zorgon-5" required> Zorgon-5</div>
+<div><input type="radio" name="answer" value="Nebulon Prime" required> Nebulon Prime</div>
+<div><input type="radio" name="answer" value="Kelp-77" required> Kelp-77</div>
+<div><input type="radio" name="answer" value="Xarthos" required> Xarthos</div>
+      <button type="submit">Next</button>
+    </form>
+  </div>
+</body>
+</html>
