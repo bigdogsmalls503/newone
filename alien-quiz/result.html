@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Alien Result</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="quiz.js"></script>
+  <script>
+    const ARCH = {
+  "Nebulor": {
+    "img": "https://images.unsplash.com/photo-1543722530-d2c3201371e7",
+    "desc": "Nebulor drifters are mist-born beings who surf stellar winds and speak in shimmering light."
+  },
+  "Crysalin": {
+    "img": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    "desc": "Crystal-bodied intellects that refract thoughts into a thousand brilliant plans."
+  },
+  "Scaldrak": {
+    "img": "https://images.unsplash.com/photo-1514511831306-29b89f4d0f6b",
+    "desc": "Warm-blooded hunters with scales like armored constellations\u2014fierce, loyal, unstoppable."
+  },
+  "Mechari": {
+    "img": "https://images.unsplash.com/photo-1501527459-9d08f2f1a3f1",
+    "desc": "Cyber-organic tinkerers whose minds hum in perfect sync with warp engines."
+  }
+};
+    document.addEventListener('DOMContentLoaded', () => {
+      const result = computeResult();
+      const wrap = document.getElementById('result');
+      if (!result || !ARCH[result]) {
+        wrap.innerHTML = '<p>Looks like you jumped to results too soon. Try the quiz again!</p>';
+        return;
+      }
+      const data = ARCH[result];
+      wrap.innerHTML = `
+        <span class="badge">You are...</span>
+        <h1>{} result {}</h1>
+        <img src="${data.img}" alt="Alien result">
+        <p>${data.desc}</p>
+        <div class="actions">
+          <a class="btn" href="question1.html" onclick="resetQuiz()">Retake Quiz</a>
+          <a class="btn secondary" href="/index.html">Go to Home</a>
+        </div>
+      `.replace(/{}/g, result);
+    });
+  </script>
+</head>
+<body class="bg-q9">
+  <div class="container">
+    <div class="result-wrap" id="result">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</body>
+</html>
